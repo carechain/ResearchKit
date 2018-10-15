@@ -54,7 +54,8 @@
     self = [super init];
     if (self) {
         ORKThrowInvalidArgumentExceptionIfNil(identifier);
-        _identifier = [identifier copy];
+//        _identifier = [identifier copy];
+        _identifier = [NSString stringWithFormat:@"%@:%@", [identifier copy], [[NSUUID UUID] UUIDString]];
     }
     return self;
 }
