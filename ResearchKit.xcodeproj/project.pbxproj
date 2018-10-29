@@ -22,6 +22,9 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		043C98DA2187AAF200911926 /* ORKProfileStep.h in Headers */ = {isa = PBXBuildFile; fileRef = 043C98D72187AAF200911926 /* ORKProfileStep.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		043C98DB2187AAF200911926 /* ORKProfileStep.m in Sources */ = {isa = PBXBuildFile; fileRef = 043C98D82187AAF200911926 /* ORKProfileStep.m */; };
+		043C98DC2187AAF200911926 /* ORKProfileStep_Internal.h in Headers */ = {isa = PBXBuildFile; fileRef = 043C98D92187AAF200911926 /* ORKProfileStep_Internal.h */; };
 		106FF29E1B663FCE004EACF2 /* ORKHolePegTestPlaceStep.h in Headers */ = {isa = PBXBuildFile; fileRef = 106FF29C1B663FCE004EACF2 /* ORKHolePegTestPlaceStep.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		106FF29F1B663FCE004EACF2 /* ORKHolePegTestPlaceStep.m in Sources */ = {isa = PBXBuildFile; fileRef = 106FF29D1B663FCE004EACF2 /* ORKHolePegTestPlaceStep.m */; };
 		106FF2A21B665B86004EACF2 /* ORKHolePegTestPlaceStepViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 106FF2A01B665B86004EACF2 /* ORKHolePegTestPlaceStepViewController.h */; settings = {ATTRIBUTES = (Private, ); }; };
@@ -745,6 +748,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		043C98D72187AAF200911926 /* ORKProfileStep.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ORKProfileStep.h; path = Onboarding/ORKProfileStep.h; sourceTree = "<group>"; };
+		043C98D82187AAF200911926 /* ORKProfileStep.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ORKProfileStep.m; path = Onboarding/ORKProfileStep.m; sourceTree = "<group>"; };
+		043C98D92187AAF200911926 /* ORKProfileStep_Internal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ORKProfileStep_Internal.h; path = Onboarding/ORKProfileStep_Internal.h; sourceTree = "<group>"; };
 		106FF29C1B663FCE004EACF2 /* ORKHolePegTestPlaceStep.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ORKHolePegTestPlaceStep.h; sourceTree = "<group>"; };
 		106FF29D1B663FCE004EACF2 /* ORKHolePegTestPlaceStep.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ORKHolePegTestPlaceStep.m; sourceTree = "<group>"; };
 		106FF2A01B665B86004EACF2 /* ORKHolePegTestPlaceStepViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ORKHolePegTestPlaceStepViewController.h; sourceTree = "<group>"; };
@@ -1628,6 +1634,9 @@
 		2429D56E1BBB5352003A512F /* Account */ = {
 			isa = PBXGroup;
 			children = (
+				043C98D92187AAF200911926 /* ORKProfileStep_Internal.h */,
+				043C98D72187AAF200911926 /* ORKProfileStep.h */,
+				043C98D82187AAF200911926 /* ORKProfileStep.m */,
 				2429D5701BBB5397003A512F /* ORKRegistrationStep.h */,
 				BC94EF351E96394C00143081 /* ORKRegistrationStep_Internal.h */,
 				2429D5711BBB5397003A512F /* ORKRegistrationStep.m */,
@@ -3206,6 +3215,7 @@
 				FF919A2E1E81AAD0005C2A1E /* ORKTowerOfHanoiResult.h in Headers */,
 				86C40CA81A8D7C5C00081FAC /* ORKPedometerRecorder.h in Headers */,
 				86C40CD01A8D7C5C00081FAC /* ORKInstructionStepView.h in Headers */,
+				043C98DA2187AAF200911926 /* ORKProfileStep.h in Headers */,
 				86C40E021A8D7C5C00081FAC /* ORKConsentDocument_Internal.h in Headers */,
 				8DE27B411D5BC9E2009A26E3 /* ORKHTMLPDFPageRenderer.h in Headers */,
 				86C40E181A8D7C5C00081FAC /* ORKConsentSection.h in Headers */,
@@ -3355,6 +3365,7 @@
 				BC13CE401B0666FD0044153C /* ORKResultPredicate.h in Headers */,
 				242C9E0D1BBE03F90088B7F4 /* ORKVerificationStepViewController.h in Headers */,
 				86C40CFA1A8D7C5C00081FAC /* ORKCaption1Label.h in Headers */,
+				043C98DC2187AAF200911926 /* ORKProfileStep_Internal.h in Headers */,
 				FF919A361E81AD9C005C2A1E /* ORKSpatialSpanMemoryResult.h in Headers */,
 				86C40E081A8D7C5C00081FAC /* ORKConsentReviewStep.h in Headers */,
 				86C40C901A8D7C5C00081FAC /* ORKActiveStepViewController_Internal.h in Headers */,
@@ -3676,6 +3687,7 @@
 				86C40D4C1A8D7C5C00081FAC /* ORKLabel.m in Sources */,
 				86C40C9E1A8D7C5C00081FAC /* ORKDeviceMotionRecorder.m in Sources */,
 				FFF65AB91E318F2D0043FB40 /* ORKMultipleValuePicker.m in Sources */,
+				043C98DB2187AAF200911926 /* ORKProfileStep.m in Sources */,
 				86C40D961A8D7C5C00081FAC /* ORKStepViewController.m in Sources */,
 				2489F7B21D65214D008DEF20 /* ORKVideoCaptureStep.m in Sources */,
 				86C40DF81A8D7C5C00081FAC /* ORKSignatureStepViewController.m in Sources */,

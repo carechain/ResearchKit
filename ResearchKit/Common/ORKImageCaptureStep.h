@@ -88,6 +88,12 @@ ORK_CLASS_AVAILABLE
  */
 @property (nonatomic, copy) NSString *accessibilityHint;
 
+/**
+ Use front camera
+*/
+
+@property (atomic) BOOL frontCamera;
+
 @end
 
 NS_ASSUME_NONNULL_END

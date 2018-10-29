@@ -45,6 +45,7 @@
 #import <ResearchKit/ORKPDFViewerStep.h>
 #import <ResearchKit/ORKQuestionStep.h>
 #import <ResearchKit/ORKRegistrationStep.h>
+#import <ResearchKit/ORKProfileStep.h>
 #import <ResearchKit/ORKReviewStep.h>
 #import <ResearchKit/ORKSignatureStep.h>
 #import <ResearchKit/ORKTableStep.h>

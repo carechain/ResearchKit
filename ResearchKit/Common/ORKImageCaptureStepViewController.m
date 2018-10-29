@@ -95,39 +95,15 @@
 
 - (void)setUpConstraints {
     NSMutableArray *constraints = [NSMutableArray new];
-
-    UIView *iPadContentView = [self viewForiPadLayoutConstraints];
-    [constraints addObjectsFromArray:@[
-                                       [NSLayoutConstraint constraintWithItem:_imageCaptureView
-                                                                    attribute:NSLayoutAttributeTop
-                                                                    relatedBy:NSLayoutRelationEqual
-                                                                       toItem:iPadContentView ? : self.view
-                                                                    attribute:NSLayoutAttributeTop
-                                                                   multiplier:1.0
-                                                                     constant:0.0],
-                                       [NSLayoutConstraint constraintWithItem:_imageCaptureView
-                                                                    attribute:NSLayoutAttributeLeft
-                                                                    relatedBy:NSLayoutRelationEqual
-                                                                       toItem:iPadContentView ? :  self.view
-                                                                    attribute:NSLayoutAttributeLeft
-                                                                   multiplier:1.0
-                                                                     constant:0.0],
-                                       [NSLayoutConstraint constraintWithItem:_imageCaptureView
-                                                                    attribute:NSLayoutAttributeRight
-                                                                    relatedBy:NSLayoutRelationEqual
-                                                                       toItem:iPadContentView ? : self.view
-                                                                    attribute:NSLayoutAttributeRight
-                                                                   multiplier:1.0
-                                                                     constant:0.0],
-                                       [NSLayoutConstraint constraintWithItem:_imageCaptureView
-                                                                    attribute:NSLayoutAttributeBottom
-                                                                    relatedBy:NSLayoutRelationEqual
-                                                                       toItem:iPadContentView ? : self.view
-                                                                    attribute:NSLayoutAttributeBottom
-                                                                   multiplier:1.0
-                                                                     constant:0.0]
-                                       ]];
-    
+    NSDictionary *views = @{ @"imageCaptureView": _imageCaptureView };
+    [constraints addObjectsFromArray:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[imageCaptureView]|"
+                                                                             options:NSLayoutFormatDirectionLeadingToTrailing
+                                                                             metrics:nil
+                                                                               views:views]];
+    [constraints addObjectsFromArray:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[imageCaptureView]|"
+                                                                             options:NSLayoutFormatDirectionLeadingToTrailing
+                                                                             metrics:nil
+                                                                               views:views]];
     [NSLayoutConstraint activateConstraints:constraints];
 }
 
@@ -233,14 +209,24 @@
     _captureSession.sessionPreset = AVCaptureSessionPresetPhoto;
     
     // Get the camera
-    AVCaptureDevice *device = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
+    AVCaptureDevice *device;
+
+    ORKImageCaptureStep *step = _imageCaptureView.imageCaptureStep;
+
+    if (step.frontCamera) {
+        device = [AVCaptureDevice defaultDeviceWithDeviceType:AVCaptureDeviceTypeBuiltInWideAngleCamera mediaType:AVMediaTypeVideo position:AVCaptureDevicePositionFront];
+    } else {
+
+        device = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
+    }
+
     if (device) {
         // Configure the input and output
         AVCaptureDeviceInput *input = [AVCaptureDeviceInput deviceInputWithDevice:device error:nil];
         AVCaptureStillImageOutput *stillImageOutput = [[AVCaptureStillImageOutput alloc] init];
         if ([_captureSession canAddInput:input] && [_captureSession canAddOutput:stillImageOutput]) {
             [_captureSession addInput:input];
-            [stillImageOutput setOutputSettings:@{AVVideoCodecKey: AVVideoCodecTypeJPEG}];
+            [stillImageOutput setOutputSettings:@{AVVideoCodecKey: AVVideoCodecJPEG}];
             [_captureSession addOutput:stillImageOutput];
             _stillImageOutput = stillImageOutput;
         } else {
